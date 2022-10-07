@@ -16,3 +16,17 @@ tar -cf /home/anais/bin/Shell.exe/Job8/Backup/$FILE.tar $FILE
 
 #supprimer les fichiers textes inutiles
 rm $FILE
+
+
+
+
+
+
+# Pour programmer un job, j'ai édité le fichier crontab (crontab -e) et y ai ajouté une nouvelle expression. 
+# La syntaxe d’une expression peut être divisée en deux étapes : le programme et la commande à lancer. 
+# Cette dernière peut également être un script si on indique son chemin. 
+#
+# J'ai donc écrit :
+# 39 * * * * /bin/bash /home/anais/bin/Shell.exe/Job8/get_logs.sh >/dev/null 2>&1
+# POur que chaque 39ème minute, de chaque heure, de chaque jour, de chaque mois, de chaque année, 
+# le script bash get_logs.sh se lance via son chemin absolu (home/anais/bin/Shell.exe/Job8). 
